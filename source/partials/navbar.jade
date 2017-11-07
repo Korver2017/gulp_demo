@@ -1,0 +1,18 @@
+mixin link(url, name)
+	li.nav-item.active
+		a.nav-link(href='#{url}')
+			| Mixin #{name}
+			span.sr-only (current)
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-3
+	a.navbar-brand(href='#') Navbar
+	button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+		span.navbar-toggler-icon
+	#navbarSupportedContent.collapse.navbar-collapse
+		ul.navbar-nav.mr-auto
+			each item in menu.list
+				+link(item.url, item.name)
+				//- li.nav-item.active
+				//- 	a.nav-link(href='#{item.url}')
+				//- 		| #{item.name}
+				//- 		span.sr-only (current)

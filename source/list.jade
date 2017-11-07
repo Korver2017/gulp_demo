@@ -1,0 +1,12 @@
+extend layout.jade
+
+block content
+	.container
+		.card-columns
+			each item in khData.records
+				.card
+					img.card-img-top(src='#{item.Picture1}')
+					.card-body
+						h4.card-title #{item.Name}
+						p.card-text
+							| #{item.Description}
